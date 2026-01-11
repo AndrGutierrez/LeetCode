@@ -9,7 +9,6 @@ impl Solution {
             else if price-min > max_profit {
                 max_profit =price-min;
             }
-
         }
         return max_profit;
     }
