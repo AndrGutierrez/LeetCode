@@ -6,8 +6,8 @@ impl Solution {
             for i in 0..amount+1{
                 let mut number = c.entry(i).or_insert(0);
                 *number+=1;
-
             }
+            
         }
 
         let mut max=0;
@@ -16,7 +16,6 @@ impl Solution {
                 if (value>=key) {
                     max=*key;
                 }
-
             }
         }
         return max;
