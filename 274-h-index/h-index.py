@@ -6,9 +6,8 @@ class Solution:
             aux[min(c,n)]+=1
         k=n
         s=aux[n]
-        print(aux)
         while k> s:
-            print(k, s, aux[k])
             k-=1
             s+=aux[k]
+
         return k
