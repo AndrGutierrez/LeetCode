@@ -4,9 +4,7 @@ impl Solution {
         let mut c: HashMap<i32, i32>= HashMap::new();
         for amount in citations {
             for i in 0..amount+1{
-
                 let mut number = c.entry(i).or_insert(0);
-
                 *number+=1;
 
             }
