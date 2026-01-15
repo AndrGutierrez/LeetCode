@@ -26,7 +26,7 @@ impl Solution {
 
             }
         }
-        if (max==0){return biggest_key}        
+        //if (max==0){return biggest_key}        
         return max;
     }
 }
