@@ -16,8 +16,6 @@ impl Solution {
                 if (value>=key) {
                     max=*key;
                 }
-                else {
-                }
 
             }
         }
