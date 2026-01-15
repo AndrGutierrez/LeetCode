@@ -11,12 +11,9 @@ impl Solution {
 
             }
         }
-        println!("{:?}", c);
 
         let mut max=0;
-        let mut biggest_key = 0;
         for (key, value) in c.iter(){
-            if *key > biggest_key {biggest_key =*key}
             if key >&max{
                 if (value>=key) {
                     max=*key;
@@ -26,7 +23,6 @@ impl Solution {
 
             }
         }
-        //if (max==0){return biggest_key}        
         return max;
     }
 }
