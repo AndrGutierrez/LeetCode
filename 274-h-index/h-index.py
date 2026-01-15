@@ -3,11 +3,12 @@ class Solution:
         n = len(citations)
         aux = [0]*(n+1)
         for c in citations:
-            if c>=n: c=n
-            aux[c]+=1
+            aux[min(c,n)]+=1
         k=n
         s=aux[n]
+        print(aux)
         while k> s:
+            print(k, s, aux[k])
             k-=1
             s+=aux[k]
         return k
