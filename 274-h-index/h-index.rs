@@ -6,7 +6,7 @@ impl Solution {
             let mut m = amount;
             let n = citations.len() as i32;
             if amount >=n{m=n}
-            for i in 0..amount+1{
+            for i in 0..m+1{
                 let mut number = c.entry(i).or_insert(0);
                 *number+=1;
             }
