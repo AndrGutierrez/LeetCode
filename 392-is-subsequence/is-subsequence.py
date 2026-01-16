@@ -5,7 +5,6 @@ class Solution:
         full_text = list(t)
 
         q = deque(arr)
-        print(q)
         for char in full_text:
             if not q: return True
             if q[0]  == char:
