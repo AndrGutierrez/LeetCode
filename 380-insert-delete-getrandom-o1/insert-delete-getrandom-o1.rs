@@ -1,8 +1,11 @@
 use std::collections::HashMap;
 use std::collections::hash_map::Entry;
 use rand::Rng;
+
 struct RandomizedSet {
     set: HashMap<i32,i32>,
+    copy: Vec<i32>
+
 }
 
 /** 
@@ -13,16 +16,21 @@ impl RandomizedSet {
     fn new() -> Self {
         Self {
             set: HashMap::new(),
+            copy: Vec::new()
         }
     }
     
     fn insert(&mut self, val: i32) -> bool {
+           //  println!("{:?}", self.set);
+
         match self.set.entry(val){
             Entry::Occupied(entry)=>{
                 return false;
             }
             Entry::Vacant(entry)=>{
-                entry.insert(val);
+                self.copy.push(val);
+                entry.insert((self.copy.len()-1) as i32);
+
                 return true
             }
         }
@@ -31,8 +39,20 @@ impl RandomizedSet {
     
     fn remove(&mut self, val: i32) -> bool {
         match self.set.entry(val){
-            Entry::Occupied(entry)=>{
+            Entry::Occupied(mut entry)=>{
+                let latest_element = self.copy[self.copy.len()-1];
+                let current_index = *entry.get_mut();
+                //let latest_element = self.copy[latest_element_index as usize];
+                // self.set.entry[self.copy[self.copy.len()-1]] = self.copy[entry.get_mut()];
                 entry.remove();
+
+
+                self.copy.swap_remove(current_index as usize);
+                if val!=latest_element{
+                    self.set.insert(latest_element, current_index);
+
+                }
+
                 return true;
             }
             Entry::Vacant(entry)=>{
@@ -42,14 +62,11 @@ impl RandomizedSet {
     }
     
     fn get_random(&self) -> i32 {
-        let mut rng =  rand::thread_rng();
-        let vec: Vec<i32> = self.set.clone().into_values().collect();
-        let n: i32 = vec.len() as i32;
-
-        let random_number:usize = rng.gen_range(0..n) as usize;
-        //println!("{:?}", vec);
-        //return 1;
-        return vec[random_number];
+        let n: i32 = self.copy.len() as i32;
+        let mut random = rand::thread_rng();
+        let i: usize= random.gen_range(0..n) as usize;
+        // return 0
+        return self.copy[i];
     }
 }
 
