@@ -47,7 +47,6 @@ impl RandomizedSet {
                 if val!=latest_element{
                     self.set.insert(latest_element, current_index);
                 }
-
                 return true;
             }
             Entry::Vacant(entry)=>{
