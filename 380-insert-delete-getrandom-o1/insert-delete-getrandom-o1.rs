@@ -21,7 +21,6 @@ impl RandomizedSet {
     }
     
     fn insert(&mut self, val: i32) -> bool {
-           //  println!("{:?}", self.set);
 
         match self.set.entry(val){
             Entry::Occupied(entry)=>{
@@ -42,15 +41,11 @@ impl RandomizedSet {
             Entry::Occupied(mut entry)=>{
                 let latest_element = self.copy[self.copy.len()-1];
                 let current_index = *entry.get_mut();
-                //let latest_element = self.copy[latest_element_index as usize];
-                // self.set.entry[self.copy[self.copy.len()-1]] = self.copy[entry.get_mut()];
                 entry.remove();
-
-
                 self.copy.swap_remove(current_index as usize);
+
                 if val!=latest_element{
                     self.set.insert(latest_element, current_index);
-
                 }
 
                 return true;
@@ -65,7 +60,6 @@ impl RandomizedSet {
         let n: i32 = self.copy.len() as i32;
         let mut random = rand::thread_rng();
         let i: usize= random.gen_range(0..n) as usize;
-        // return 0
         return self.copy[i];
     }
 }
