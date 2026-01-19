@@ -9,6 +9,7 @@ class Solution:
                 zeros.append(i) 
                 continue
             mult*=num
+            
         if len(zeros)>=2:
             return [0]*len(nums)
         elif len(zeros)>=1:
