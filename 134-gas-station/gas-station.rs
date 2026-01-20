@@ -2,18 +2,12 @@ impl Solution {
     pub fn can_complete_circuit(gas: Vec<i32>, cost: Vec<i32>) -> i32 {
         let n: i32 = gas.len() as i32;
         let mut differences: Vec<i32> = Vec::<i32>::new();
-        let mut max_difference=0;
-        let mut max_index:i32=0;
         let mut total = 0;
         let mut cycle_completed = false;
         let mut nodes_visited=0;
         for i in 0..n {
             let idx: usize=i as usize;
             let difference = gas[idx]-cost[idx];
-            if difference>max_difference{
-                max_difference = difference;
-                max_index=i;
-            }
             differences.push(difference);
             total+=difference;
         }
