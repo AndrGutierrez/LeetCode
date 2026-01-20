@@ -22,16 +22,11 @@ impl Solution {
                     nodes_visited=0;
                     carry = 0;
                 }
-                else{
-                    nodes_visited+=1
-                }
-                if nodes_visited >=n {
-                    break;
-                }
+                else{ nodes_visited+=1 }
+                if nodes_visited >=n { break }
                 i+=1;
             }
-            if i+1>=n {return 0}
-            return i+1;
+            return (i + 1)%n;
         }
         else{
             return -1
