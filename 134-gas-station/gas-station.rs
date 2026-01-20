@@ -4,7 +4,6 @@ impl Solution {
         let mut differences: Vec<i32> = Vec::<i32>::new();
         let mut max_difference=0;
         let mut max_index:i32=0;
-        let mut differences: Vec<i32> = Vec::<i32>::new();
         let mut total = 0;
         let mut cycle_completed = false;
         let mut nodes_visited=0;
