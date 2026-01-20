@@ -26,7 +26,7 @@ impl Solution {
                 if nodes_visited >=n { break }
                 i+=1;
             }
-            return (i + 1)%n;
+            return (i + 1) % n;
         }
         else{
             return -1
