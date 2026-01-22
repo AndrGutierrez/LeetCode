@@ -20,14 +20,12 @@ class Solution:
         water = 0
         while right > left:
             if height[left] <= height[right]:
-                if height[left] > max_left:
-                    max_left = height[left]
+                max_left = max(height[left], max_left)
                 water+= max_left-height[left]
                 left+=1
                 
             else:
-                if height[right] > max_right:
-                    max_right = height[right]
+                max_right= max(max_right, height[right])
                 water+=max_right-height[right]
                 right-=1
 
