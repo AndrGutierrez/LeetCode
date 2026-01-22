@@ -20,7 +20,6 @@ class Solution:
         water = 0
         while right > left:
             if height[left] <= height[right]:
-
                 if height[left] > max_left:
                     max_left = height[left]
                 water+= max_left-height[left]
@@ -29,9 +28,7 @@ class Solution:
             else:
                 if height[right] > max_right:
                     max_right = height[right]
-
                 water+=max_right-height[right]
-                    
                 right-=1
 
             
