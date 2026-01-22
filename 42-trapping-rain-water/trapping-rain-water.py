@@ -19,7 +19,6 @@ class Solution:
         right = len(height)-1
         water = 0
         while right > left:
-            print(left)
             if height[left] <= height[right]:
 
                 if height[left] > max_left:
