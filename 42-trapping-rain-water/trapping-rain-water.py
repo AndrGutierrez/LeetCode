@@ -1,13 +1,11 @@
 """
 if left <= right:
     water = max_left - left
-    if left > max_left
-        max_left = left
+    max_left = max(max_left, left)
     left+=1
 else:
     water = max_right - right
-    if right > max_right
-        max_rigt = right
+    max_right = max(max_right, max)
     right+=1
     next
 """
