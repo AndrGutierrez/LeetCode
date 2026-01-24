@@ -44,12 +44,11 @@ impl Solution {
 
         while i <= n-1  {
             current = *numbers.get(&arr[i as usize]).unwrap();
-            if i +1 < n{
+            if i +1 < n {
                 next = *numbers.get(&arr[(i+1) as usize]).unwrap();
                 if current >=next{
                     res+=current;
                     i+=1;
-                    continue
                 }
                 else {
                     res+=next-current;
