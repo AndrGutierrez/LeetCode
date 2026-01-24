@@ -33,7 +33,6 @@ impl Solution {
             left =  numbers[li as usize];
             right =  numbers[ri as usize];
             let mut trial = left+right;
-            println!("{:?}, {:?}. {:?}", trial, li, ri);
 
             if trial == target{
                 return vec![li+1, ri+1];
@@ -51,7 +50,6 @@ impl Solution {
                     }
                 }
                 else{
-
                     li+=1
                 }
             }
