@@ -1,55 +1,62 @@
 /*
     The array is
     - Sorted, non decreasing
-    - numbers[i]<numbers[i+1]
     - numbers[index1]+numbers[index2] == target, if index1 !=index2
-    - if numbers[i]>target{
-        next
-    } 
-    - traversing the array backwards {
-        if numbers[i]+numbers[i-1] > target {
-            i-=1;
-
+    - targets and numbers can be negative
+    
+    trial = numbers[index1]+numbers[index2]
+    if trial > target{
+        if right > target {
+            li+=1
         }
-        elif numbers[i]
+        else {
+            ri-=1
+        }
+    }
+    else {
+        if left < target{
+            li+=1
+        }
+
     }
 
-    numbers can be negative
-
-    index >= 1
-    return [index1 + 1, index2+1]
-    
 */
 impl Solution {
     pub fn two_sum(numbers: Vec<i32>, target: i32) -> Vec<i32> {
-        let n: usize = numbers.len();
-        let (mut index1, mut index2)= (0, 0);
-        let mut found = false;
-        for (i, num) in numbers.iter().enumerate(){
-            let mut idx: usize = (n-i-1) as usize;
+        let n: i32 = numbers.len() as i32;
+        let mut ri: i32 = n-1;
+        let mut li: i32 = 0;
+        let mut left =  numbers[li as usize];
+        let mut right =  numbers[ri as usize];
 
-            index1 = idx as i32;
-            index2= index1 -1;
+        while ri > li{
+            left =  numbers[li as usize];
+            right =  numbers[ri as usize];
+            let mut trial = left+right;
+            println!("{:?}, {:?}. {:?}", trial, li, ri);
 
-
-            // if numbers[index1 as usize] > target && numbers[index1 as usize] !=0{
-            //     continue;
-            // }
-            
-            
-            while index2 >= 0 {
-                if (numbers[index1 as usize] + numbers[index2 as usize]) == target{
-                    found = true;
-                    break;                    
+            if trial == target{
+                return vec![li+1, ri+1];
+            }
+            else {
+                if trial >target{
+                    if right > target{
+                        ri-=1;
+                    }
+                    else if left<0 {
+                        li+=1;
+                    }
+                    else {
+                        ri-=1;
+                    }
                 }
-                else {
-                    index2 -=1;
+                else{
+
+                    li+=1
                 }
             }
-            if found {break}
-            
         }
+        return vec![li+1, ri+1];
 
-        return vec![index2+1, index1+1];
     }
 }
