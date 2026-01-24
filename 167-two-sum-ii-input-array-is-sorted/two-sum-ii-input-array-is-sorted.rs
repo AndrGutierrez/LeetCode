@@ -39,15 +39,13 @@ impl Solution {
             }
             else {
                 if trial >target{
-                    if right > target{
+                    if right > target || left > 0{
                         ri-=1;
                     }
                     else if left<0 {
                         li+=1;
                     }
-                    else {
-                        ri-=1;
-                    }
+
                 }
                 else{
                     li+=1
