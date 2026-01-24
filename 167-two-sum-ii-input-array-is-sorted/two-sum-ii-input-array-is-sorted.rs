@@ -28,12 +28,12 @@ impl Solution {
         let mut li: i32 = 0;
         let mut left =  numbers[li as usize];
         let mut right =  numbers[ri as usize];
+        let mut trial = left+right;
 
         while ri > li{
             left =  numbers[li as usize];
             right =  numbers[ri as usize];
-            let mut trial = left+right;
-
+            trial = left+right;
             if trial == target{
                 return vec![li+1, ri+1];
             }
