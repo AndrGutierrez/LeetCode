@@ -74,18 +74,15 @@ impl Solution {
                 while residual != 0 {
                     j=0;
                     while residual < 0{
-                        println!("{:?}, {:?}", trial, value);
                         j+=1;
                         trial = numbers[j as usize];
                         residual = value - trial;
                     }
-                    //println!("{:?}", residual);
 
                     residual-=trial;
                     if residual < 0 {
                         value = residual+trial;
                         if value == 0{ break}
-                        // println!("{:?}, {:?}", trial, residual);
 
                     }
 
@@ -118,7 +115,6 @@ impl Solution {
                 }
                 res.push_str(ninesMap[&trial])
             }
-            //println!("{:?}", value);
         } 
        return res;
     }
