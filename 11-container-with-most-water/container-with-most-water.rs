@@ -27,7 +27,6 @@ impl Solution {
             let left = height[li as usize];
             let right = height[ri as usize];
             let current_area = min(left, right) * (ri-li);
-            println!("{:?}, {:?}, {:?}", current_area, li, ri);
             max_area = max(current_area, max_area);
             if left > right{ 
                 ri-=1;
