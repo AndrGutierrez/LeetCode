@@ -1,4 +1,9 @@
+/*
+this is done intil right is reached
 
+then it gets the sum from right to left inside a loop, thats also a loop, the bigest the ragne the hicher the m 
+
+*/
 use std::cmp::min;
 impl Solution {
     pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
@@ -8,11 +13,11 @@ impl Solution {
         let mut right: i32 = 0;
         let n: i32 = nums.len() as i32;
         while right <= n {
+            let mut sum = 0;
+            for j in left..right {
+                sum+=nums[j as usize];
+            }
             loop {
-                let mut sum: i32 =0;
-                for j in left..right {
-                    sum+=nums[j as usize];
-                }
 
                 if sum >= target{
                     let wsize= right-left;
@@ -22,7 +27,10 @@ impl Solution {
                     else {
                         min_window_size = min(min_window_size, wsize);
                     }
+                    sum -=nums[left as usize];
+
                     left+=1;
+
                 }            
                 else {
                     right+=1;
