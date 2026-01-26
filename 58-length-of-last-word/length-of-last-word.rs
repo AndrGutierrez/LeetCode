@@ -19,14 +19,12 @@ impl Solution {
             else {
                 current_size+= 1;
             }
-                            if current_size > 0{
-                    window_sizes.push(current_size);
-                }
+            if current_size > 0{
+                window_sizes.push(current_size);
+            }
 
-            //println!("{:?}, {:?}", c,  current_size);
         }
         let mut last = window_sizes.len() as i32 - 1;
-        //println!("{:?}", window_sizes[last as usize]);
         return window_sizes[last as usize];
     }
 }
