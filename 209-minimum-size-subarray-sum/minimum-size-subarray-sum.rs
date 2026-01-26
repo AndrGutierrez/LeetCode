@@ -14,7 +14,6 @@ impl Solution {
         for right in 0..n {
             let mut sum: i32 = nums[left as usize..(right+1) as usize].iter().sum();
             while sum >= target {
-                
                 let wsize: i32 = right -left +1;
                 if min_window_size == 0{
                     min_window_size = wsize;
@@ -22,6 +21,7 @@ impl Solution {
                 else {
                     min_window_size = min(min_window_size, wsize);
                 }
+                // min_window_size = right - left +1;
                 sum -=nums[left as usize];
                 left+=1;
             }            
