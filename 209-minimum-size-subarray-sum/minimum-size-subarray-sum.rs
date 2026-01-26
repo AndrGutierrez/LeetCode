@@ -11,21 +11,18 @@ impl Solution {
         let mut min_window_size: i32 = 0;
         let mut left: i32 = 0;
         let n: i32 = nums.len() as i32;
-        for (right, num) in nums.iter().enumerate() {
-            let mut sum: i32 = nums[left as usize..right+1].iter().sum();
+        for right in 0..n {
+            let mut sum: i32 = nums[left as usize..(right+1) as usize].iter().sum();
             while sum >= target {
                 
-                let wsize: i32 = right as i32-left +1;
+                let wsize: i32 = right -left +1;
                 if min_window_size == 0{
                     min_window_size = wsize;
                 }
-            
                 else {
                     min_window_size = min(min_window_size, wsize);
                 }
-
                 sum -=nums[left as usize];
-
                 left+=1;
             }            
         }
