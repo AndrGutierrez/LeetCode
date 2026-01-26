@@ -11,7 +11,7 @@ impl Solution {
         let mut min_window_size: i32 = i32::MAX;
         let mut left: i32 = 0;
         let n: i32 = nums.len() as i32;
-            let mut sum: i32 = 0;
+        let mut sum: i32 = 0;
 
         for right in 0..n {
             sum+=nums[right as usize];
@@ -22,12 +22,7 @@ impl Solution {
                 left+=1;
             }            
         }
-        if min_window_size == i32::MAX{
-            return 0
-        }
-        else{
-            return min_window_size;
-
-        }
+        let result = if min_window_size == i32::MAX { 0 } else {min_window_size};
+        return result;
     }
 }
