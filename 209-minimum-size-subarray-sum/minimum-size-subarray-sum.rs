@@ -11,8 +11,10 @@ impl Solution {
         let mut min_window_size: i32 = i32::MAX;
         let mut left: i32 = 0;
         let n: i32 = nums.len() as i32;
+            let mut sum: i32 = 0;
+
         for right in 0..n {
-            let mut sum: i32 = nums[left as usize..(right+1) as usize].iter().sum();
+            sum+=nums[right as usize];
             while sum >= target {
                 let wsize: i32 = right -left +1;
                 min_window_size = min(min_window_size, wsize);
