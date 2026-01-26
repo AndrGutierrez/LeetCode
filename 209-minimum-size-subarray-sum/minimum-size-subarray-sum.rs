@@ -31,25 +31,19 @@ impl Solution {
         while right <= n {
             loop {
                 let mut sum: i32 =0;
-
                 for j in left..right {
-
                     sum+=nums[j as usize];
-
                 }
 
                 if sum >= target{
-
                     let wsize= right-left;
                     if min_window_size == 0{
                         min_window_size = wsize;
                     }
                     else {
                         min_window_size = min(min_window_size, wsize);
-
                     }
                     left+=1;
-
                 }            
                 else {
                     right+=1;
