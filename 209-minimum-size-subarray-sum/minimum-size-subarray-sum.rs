@@ -1,25 +1,4 @@
-/*
-- Positive integers
-- Positive target
-- MINIMAL length (greedy?)
-- return LENGTH of the min_sub
-- min_sub is minimal subarray in nums such that sum(subarray) is GREATER OR EQUAL to target
-- if doesnt exist, return 0 
-- target > 0
-- all numbers > 0
 
-make a window of  size two
-got to ith element  to ith+window size - 1
-
-if the sum of the elements in the window equal target, regurn window size
-
-else, slide the window
-
-if window size<=n
-    if not found increase window size
-else;
-    return 0
-*/
 use std::cmp::min;
 impl Solution {
     pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
