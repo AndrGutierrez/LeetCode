@@ -10,33 +10,25 @@ impl Solution {
         let mut window_size: i32 = 4;
         let mut min_window_size: i32 = 0;
         let mut left: i32 = 0;
-        let mut right: i32 = 0;
         let n: i32 = nums.len() as i32;
-        while right <= n {
-            let mut sum = 0;
-            for j in left..right {
-                sum+=nums[j as usize];
-            }
-            loop {
-
-                if sum >= target{
-                    let wsize= right-left;
-                    if min_window_size == 0{
-                        min_window_size = wsize;
-                    }
-                    else {
-                        min_window_size = min(min_window_size, wsize);
-                    }
-                    sum -=nums[left as usize];
-
-                    left+=1;
-
-                }            
-                else {
-                    right+=1;
-                    break
+        for (right, num) in nums.iter().enumerate() {
+            let mut sum: i32 = nums[left as usize..right+1].iter().sum();
+            while sum >= target {
+                
+                let wsize: i32 = right as i32-left +1;
+                if min_window_size == 0{
+                    min_window_size = wsize;
                 }
-            }
+            
+                else {
+                    min_window_size = min(min_window_size, wsize);
+                }
+            //println!("{:?}, {:?}, {:?}", sum, nums[left as usize], nums[right]);
+
+                sum -=nums[left as usize];
+
+                left+=1;
+            }            
         }
         return min_window_size;
     }
