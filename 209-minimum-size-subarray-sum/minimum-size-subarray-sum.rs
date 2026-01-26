@@ -23,7 +23,6 @@ impl Solution {
                 else {
                     min_window_size = min(min_window_size, wsize);
                 }
-            //println!("{:?}, {:?}, {:?}", sum, nums[left as usize], nums[right]);
 
                 sum -=nums[left as usize];
 
