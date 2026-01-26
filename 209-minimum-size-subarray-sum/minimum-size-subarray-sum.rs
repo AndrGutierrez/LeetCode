@@ -37,12 +37,10 @@ impl Solution {
                     sum+=nums[j as usize];
 
                 }
-                //println!("{:?}, {:?}, {:?}", left, right, sum);
 
                 if sum >= target{
 
                     let wsize= right-left;
-                    // println!("{:?}, {:?}", left, right);
                     if min_window_size == 0{
                         min_window_size = wsize;
                     }
