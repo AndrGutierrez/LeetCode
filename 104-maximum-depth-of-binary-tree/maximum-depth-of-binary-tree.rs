@@ -51,7 +51,7 @@ impl Solution {
                         queue.push_back(node.left.clone());
                         queue.push_back(node.right.clone());
                     }
-                    None => continue
+                    None => {},
     
                 }
 
