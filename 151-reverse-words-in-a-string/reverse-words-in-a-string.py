@@ -5,7 +5,6 @@ class Solution:
         left = 0
         right = 0
         current_word = ''
-        q = deque()
         res = ''
         while right < n:
             current_word = ''
