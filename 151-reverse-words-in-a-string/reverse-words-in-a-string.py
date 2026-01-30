@@ -10,7 +10,6 @@ class Solution:
         while right < n:
             current_word = ''
             while s[right] != ' ' and right<n:
-                print(right, s[right])
                 current_word+=s[right]
                 right+=1
                 if right > n-1:  break
@@ -20,5 +19,4 @@ class Solution:
             right+=1
 
 
-        print(res)
         return res
