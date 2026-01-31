@@ -37,6 +37,12 @@ you get the zigzag but how do you convert?
 
 run on the matrix and add where you find a character
 
+ok every one has its thing associated with a number,
+if i make list of tuples witht he number and the other, what do i do
+
+sorting is better than this, but still worse
+
+
 """
 import math
 class Solution:
@@ -46,23 +52,51 @@ class Solution:
         res=""
         for i, r in enumerate(matrix):
             matrix[i] = [0]*math.floor(len(s))
-        # for row in matrix:
-        #     print(row)
         i = 0
         j = 0
+
+        dic = {}
         direction = 1
         for c in s:
-            matrix[i][j] = c
+
+            if dic.get(i):
+                dic[i].append(c)
+            else: dic[i] = [c]
+            
             i+=direction
 
             if i % (numRows-1) ==0:
                 j += 1
                 direction*=-1
 
-        # for i, row in enumerate(matrix):
-        #     for j, column in enumerate(row):
-
-        for row in matrix:
-            for c in row:
-                if c !=0: res+=c
+        for val in dic.values():
+            for c in val:
+                res+=c
         return res
+
+# class Solution:
+#     def convert(self, s: str, numRows: int) -> str:
+#         if numRows == 1: return s
+#         matrix = [0]*numRows
+#         res=""
+#         for i, r in enumerate(matrix):
+#             matrix[i] = [0]*math.floor(len(s))
+#         i = 0
+#         j = 0
+# 
+#         dic = {}
+#         direction = 1
+#         for c in s:
+# 
+#             matrix[i][j] = c
+#             i+=direction
+# 
+#             if i % (numRows-1) ==0:
+#                 j += 1
+#                 direction*=-1
+# 
+# 
+#         for row in matrix:
+#             for c in row:
+#                 if c !=0: res+=c
+#         return res
