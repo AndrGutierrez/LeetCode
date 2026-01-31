@@ -48,7 +48,6 @@ import math
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
         if numRows == 1: return s
-        matrix = [0]*numRows
         res=""
         i = 0
         j = 0
@@ -56,7 +55,6 @@ class Solution:
         dic = {}
         direction = 1
         for c in s:
-
             if dic.get(i):
                 dic[i].append(c)
             else: dic[i] = [c]
