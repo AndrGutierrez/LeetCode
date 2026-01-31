@@ -60,7 +60,7 @@ class Solution:
             else: dic[i] = [c]
 
             i+=direction
-            if i % (numRows-1) ==0:
+            if i % (numRows-1) == 0:
                 # j += 1
                 direction*=-1
 
