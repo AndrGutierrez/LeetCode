@@ -50,13 +50,11 @@ impl Solution {
         let mut levels: Vec<Vec<i32>> = vec![vec![]];
         while queue.len() as i32 > 0 {
             let mut ql = queue.len();
-            let mut level: Vec<i32> = vec![];
             for i in 0..ql{
                 let mut current = queue.pop_front().unwrap();
                 match current {
                     Some(c) =>{
                         let mut cref= c.borrow_mut();
-                        level.push(cref.val);
                         queue.push_back(cref.left.clone());
                         queue.push_back(cref.right.clone());
                         let node = &mut *cref;
@@ -64,10 +62,7 @@ impl Solution {
                     },
                     None => {}
                 }
-                
-
-            }
-            
+            } 
         }
         return res;
     }
