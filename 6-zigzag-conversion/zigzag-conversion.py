@@ -50,8 +50,6 @@ class Solution:
         if numRows == 1: return s
         res=""
         i = 0
-        # j = 0
-
         dic = {}
         direction = 1
         for c in s:
@@ -61,7 +59,6 @@ class Solution:
 
             i+=direction
             if i % (numRows-1) == 0:
-                # j += 1
                 direction*=-1
 
         for val in dic.values():
