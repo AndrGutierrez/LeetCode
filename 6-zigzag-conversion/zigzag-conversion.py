@@ -58,7 +58,7 @@ class Solution:
             if dic.get(i):
                 dic[i].append(c)
             else: dic[i] = [c]
-            
+
             i+=direction
             if i % (numRows-1) ==0:
                 j += 1
@@ -69,29 +69,3 @@ class Solution:
                 res+=c
         return res
 
-# class Solution:
-#     def convert(self, s: str, numRows: int) -> str:
-#         if numRows == 1: return s
-#         matrix = [0]*numRows
-#         res=""
-#         for i, r in enumerate(matrix):
-#             matrix[i] = [0]*math.floor(len(s))
-#         i = 0
-#         j = 0
-# 
-#         dic = {}
-#         direction = 1
-#         for c in s:
-# 
-#             matrix[i][j] = c
-#             i+=direction
-# 
-#             if i % (numRows-1) ==0:
-#                 j += 1
-#                 direction*=-1
-# 
-# 
-#         for row in matrix:
-#             for c in row:
-#                 if c !=0: res+=c
-#         return res
