@@ -50,8 +50,6 @@ class Solution:
         if numRows == 1: return s
         matrix = [0]*numRows
         res=""
-        for i, r in enumerate(matrix):
-            matrix[i] = [0]*math.floor(len(s))
         i = 0
         j = 0
 
@@ -64,7 +62,6 @@ class Solution:
             else: dic[i] = [c]
             
             i+=direction
-
             if i % (numRows-1) ==0:
                 j += 1
                 direction*=-1
