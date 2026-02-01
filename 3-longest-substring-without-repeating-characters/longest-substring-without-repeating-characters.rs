@@ -36,7 +36,6 @@ impl Solution {
             registered.insert(chars[ri], true);
             right+=1;
 
-            println!("{:?}, {:?}", left, right);
             max_length = max(right-left, max_length);
 
 
