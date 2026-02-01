@@ -24,7 +24,6 @@ impl Solution {
         let mut registered: HashMap<char, bool>= HashMap::new();
         let chars: Vec<char> = s.chars().collect();
         while right < n {
-            let li = left as usize;
             let ri = right as usize;
 
             while registered.get(&chars[ri]).is_some() {
