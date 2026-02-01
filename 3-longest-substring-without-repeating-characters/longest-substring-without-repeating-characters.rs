@@ -17,7 +17,6 @@ use std::collections::HashMap;
 use std::cmp::max;
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
-        //if s.len() as i32 == 0 {return 0};
         let mut left = 0;
         let mut right = 0;
         let n = s.len() as i32;
@@ -25,10 +24,9 @@ impl Solution {
         let mut registered: HashMap<char, bool>= HashMap::new();
         let chars: Vec<char> = s.chars().collect();
         while right < n {
-
             let li = left as usize;
             let ri = right as usize;
-            
+
             while registered.get(&chars[ri]).is_some() {
                     registered.remove(&chars[left as usize]);
                     left +=1;
