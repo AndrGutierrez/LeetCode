@@ -23,17 +23,18 @@ impl Solution {
         let hchars: Vec<char>= haystack.chars().collect();
         let nchars: Vec<char> = needle.chars().collect();
         let mut i = 0;
-        while right < n{
+
+        while right < n {
             let current = hchars[right as usize];
-            let needlechar =nchars[i as usize];
-            if  current ==  needlechar{
+            let needlechar = nchars[i as usize];
+            if  current ==  needlechar {
                 i+=1;
                 if i >= nchars.len(){
                     return left;
                 }
                 right+=1;
-
             }
+
             else {
                 loop {
                     left+=1;
@@ -41,9 +42,7 @@ impl Solution {
                     if !(hchars[left as usize] !=  nchars[0 as usize]) {break}
                 }
                 right = left;
-
                 i=0;
-
             }
 
         }
