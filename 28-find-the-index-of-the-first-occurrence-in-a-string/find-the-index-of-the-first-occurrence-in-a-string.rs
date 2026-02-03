@@ -26,7 +26,7 @@ impl Solution {
         while right < n{
             let current = hchars[right as usize];
             let needlechar =nchars[i as usize];
-            println!("{:?}, {:?}", left, right);
+            // println!("{:?}, {:?}", left, right);
 
             if  current ==  needlechar{
                 //println!("{:?}, {:?}", current, needlechar);
