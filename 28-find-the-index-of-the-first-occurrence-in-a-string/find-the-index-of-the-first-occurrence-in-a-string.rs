@@ -26,29 +26,19 @@ impl Solution {
         while right < n{
             let current = hchars[right as usize];
             let needlechar =nchars[i as usize];
-            // println!("{:?}, {:?}", left, right);
-
             if  current ==  needlechar{
-                //println!("{:?}, {:?}", current, needlechar);
-                //println!("{:?}", left);
-                //println!("{:?}, {:?}", left, right);
-
                 i+=1;
                 if i >= nchars.len(){
                     return left;
                 }
-            right+=1;
+                right+=1;
 
             }
             else {
-                // println!("{:?}, {:?}, {:?}", hchars[left as usize], nchars[0 as usize], left);
-                
-                left+=1;
-                if left >=n {return -1}
-                while (hchars[left as usize] !=  nchars[0 as usize]) && left <=n {
-
+                loop {
                     left+=1;
                     if left >=n {return -1}
+                    if !(hchars[left as usize] !=  nchars[0 as usize]) {break}
                 }
                 right = left;
 
