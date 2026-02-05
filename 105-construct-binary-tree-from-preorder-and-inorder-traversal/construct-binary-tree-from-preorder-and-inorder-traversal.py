@@ -19,12 +19,14 @@ class Solution:
             preorder_index+=1
 
 
-
-            # build left subtree
+            # recorre el array hacia la izquierda recursivamente
             root.left = build(left, inorder_index_map[val]-1)
-            # build right subtree
+            # recorre el array hacia la derecha recursivamente
             root.right = build(inorder_index_map[val]+1, right)
 
+            # yo lo que hacia era pasar el array a la izquierda del indice y luego a la derecha
+            # terminando cuando quedaba un solo elemento lo que tomaba un tiempo O(n) en cada iteracion
+            # esto es mucho mas optimizado
             return root 
 
         preorder_index = 0
