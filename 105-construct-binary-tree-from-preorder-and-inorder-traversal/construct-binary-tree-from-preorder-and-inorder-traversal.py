@@ -11,27 +11,26 @@ then came optimization
 """
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-        def build( preorder, inorder):
+        def build(left, right):
             nonlocal preorder_index
-            if len(inorder) <= 0 or preorder_index >= len(preorder): return None
-
-            root = TreeNode(preorder[preorder_index])
+            if left > right: return None
+            val = preorder[preorder_index]
+            root = TreeNode(val)
             preorder_index+=1
-            i = 0
 
-            for j, item in enumerate(inorder):
-                if item == root.val:
-                    i =  j
-                    break
+
 
             # build left subtree
-            root.left = build(preorder, inorder[:i])
+            root.left = build(left, inorder_index_map[val]-1)
             # build right subtree
-            root.right = build(preorder, inorder[i+1:])
+            root.right = build(inorder_index_map[val]+1, right)
 
             return root 
 
         preorder_index = 0
-        root = build(preorder, inorder)
+        inorder_index_map = {
+            num: i for i, num in enumerate(inorder)
+        }
+        root = build(0, len(preorder)-1)
         return root
     
