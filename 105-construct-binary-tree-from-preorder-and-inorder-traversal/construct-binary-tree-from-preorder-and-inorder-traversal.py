@@ -37,12 +37,9 @@ class Solution:
                 i =  j
                 break
 
-        uno =1
         preorder.pop()
         root.left = self.build(preorder, inorder[:i], added)
 
-        if root.left!=None: uno+=1
-        # if len(preorder) >=1: preorder.pop()
         root.right = self.build(preorder, inorder[i+1:], added)
 
         return root 
