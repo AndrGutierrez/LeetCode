@@ -11,17 +11,15 @@ then came optimization
 """
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-        added={}
         preorder.reverse()
-        root = self.build(preorder, inorder, added)
+        root = self.build(preorder, inorder)
 
         return root
-    def build(self, preorder, inorder, added):
+    def build(self, preorder, inorder):
 
         if len(inorder) <= 0 or len(preorder)<=0: return None
 
 
-        added.setdefault(preorder[-1], True)
         root = TreeNode(preorder[-1])
 
         if inorder[0] == root: return root
@@ -35,8 +33,8 @@ class Solution:
         preorder.pop()
 
         # build left subtree
-        root.left = self.build(preorder, inorder[:i], added)
+        root.left = self.build(preorder, inorder[:i])
         # build right subtree
-        root.right = self.build(preorder, inorder[i+1:], added)
+        root.right = self.build(preorder, inorder[i+1:])
 
         return root 
