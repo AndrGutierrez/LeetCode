@@ -13,24 +13,21 @@ class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         preorder.reverse()
         root = self.build(preorder, inorder)
-
         return root
+    
     def build(self, preorder, inorder):
 
         if len(inorder) <= 0 or len(preorder)<=0: return None
 
-
         root = TreeNode(preorder[-1])
-
-
         i = 0
+        
         for j, item in enumerate(inorder):
             if item == root.val:
                 i =  j
                 break
-
+                
         preorder.pop()
-
         # build left subtree
         root.left = self.build(preorder, inorder[:i])
         # build right subtree
