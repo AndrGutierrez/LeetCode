@@ -22,7 +22,6 @@ class Solution:
 
         root = TreeNode(preorder[-1])
 
-        if inorder[0] == root: return root
 
         i = 0
         for j, item in enumerate(inorder):
