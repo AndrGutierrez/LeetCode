@@ -12,11 +12,10 @@ then came optimization
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         def build(left, right):
-            nonlocal preorder_index
             if left > right: return None
-            val = preorder[preorder_index]
+            val = preorder[self.preorder_index]
             root = TreeNode(val)
-            preorder_index+=1
+            self.preorder_index+=1
 
 
             # recorre el array hacia la izquierda recursivamente
@@ -29,7 +28,7 @@ class Solution:
             # esto es mucho mas optimizado
             return root 
 
-        preorder_index = 0
+        self.preorder_index = 0
         inorder_index_map = {
             num: i for i, num in enumerate(inorder)
         }
