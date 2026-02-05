@@ -20,9 +20,6 @@ class Solution:
 
         if len(inorder) <= 0 or len(preorder)<=0: return None
 
-        # while added.get(preorder[-1]):
-        #     preorder.pop()
-        #     if len(preorder) <=0: return None
 
         added.setdefault(preorder[-1], True)
         root = TreeNode(preorder[-1])
