@@ -17,16 +17,14 @@ class Solution:
 
         return root
     def build(self, preorder, inorder, added):
-        # build left subtree
 
         if len(inorder) <= 0 or len(preorder)<=0: return None
 
-        while added.get(preorder[-1]):
-            preorder.pop()
-            if len(preorder) <=0: return None
+        # while added.get(preorder[-1]):
+        #     preorder.pop()
+        #     if len(preorder) <=0: return None
 
         added.setdefault(preorder[-1], True)
-
         root = TreeNode(preorder[-1])
 
         if inorder[0] == root: return root
@@ -38,8 +36,10 @@ class Solution:
                 break
 
         preorder.pop()
-        root.left = self.build(preorder, inorder[:i], added)
 
+        # build left subtree
+        root.left = self.build(preorder, inorder[:i], added)
+        # build right subtree
         root.right = self.build(preorder, inorder[i+1:], added)
 
         return root 
