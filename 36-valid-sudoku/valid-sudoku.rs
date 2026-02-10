@@ -50,25 +50,6 @@ impl Solution {
             (7, HashMap::new()),
             (8, HashMap::new()),
         ]);
-        /* for while nrows < 9{
-            while ncolumns <9 {
-                for j in ncolumns..(ncolumns+1){
-                    let mut num = board[i][j];
-                    if num == '.'{
-                        // continue;
-                    }
-                    print!("{:?}", num);
-                    // print!("({:?}, {:?}) ", i, j);
-
-
-                }
-                ncolumns+=1;
-                nrows+=
-
-            }
-            println!("");
-            ncolumns = 0;
-        }*/
         while ncolumns < 9 {
             let mut visited_in_square: HashMap<char, bool> = HashMap::new();
 
