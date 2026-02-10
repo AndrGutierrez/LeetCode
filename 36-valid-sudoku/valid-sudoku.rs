@@ -50,6 +50,7 @@ impl Solution {
             (7, HashMap::new()),
             (8, HashMap::new()),
         ]);
+
         while ncolumns < 9 {
             let mut visited_in_square: HashMap<char, bool> = HashMap::new();
 
@@ -76,7 +77,6 @@ impl Solution {
                         Some(_) => return false,
                         None => column.insert(num, true)
                     };
-
 
                 }
             }
