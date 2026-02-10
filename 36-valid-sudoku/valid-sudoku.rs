@@ -53,10 +53,8 @@ impl Solution {
 
         while ncolumns < 9 {
             let mut visited_in_square: HashMap<char, bool> = HashMap::new();
-
             for i in nrows..nrows+3{
                 let mut row: &mut HashMap<char, bool> = visited_in_rows.get_mut(&(i as i32)).unwrap();
-
                 for j in ncolumns..ncolumns+3{
                     let mut column: &mut HashMap<char, bool> = visited_in_columns.get_mut(&(j as i32)).unwrap();
 
