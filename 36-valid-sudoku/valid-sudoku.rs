@@ -96,12 +96,8 @@ impl Solution {
                         None => column.insert(num, true)
                     };
 
-                    // print!("({:?}, {:?}) ", i, j);
-                    // print!("{:?}", num);
 
                 }
-                        //println!("");
-                println!("{:?}", row);
             }
             nrows+=3;
 
@@ -109,7 +105,6 @@ impl Solution {
                 nrows= 0;
                 ncolumns+=3;
             }
-            println!("");
         }
         return valid;
     }
