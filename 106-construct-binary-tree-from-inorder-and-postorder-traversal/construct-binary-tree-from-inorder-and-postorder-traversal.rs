@@ -45,10 +45,10 @@ impl Solution {
         let mut left: i32 = 0;
         let mut right: i32 = (n-1);
         let mut postorderclone = postorder.clone();
-        let root =  Solution::build(left, right, &mut postorderclone, indexmap.clone());
+        let root =  Solution::build(left, right, &mut postorderclone, &mut indexmap.clone());
         return root;
     }
-    pub fn build(left: i32, right: i32, postorder: &mut  Vec<i32>, indexmap: HashMap<i32, i32>)-> Option<Rc<RefCell<TreeNode>>> {
+    pub fn build(left: i32, right: i32, postorder: &mut  Vec<i32>, indexmap: &HashMap<i32, i32>)-> Option<Rc<RefCell<TreeNode>>> {
         
         if left > right {
             return None
@@ -59,12 +59,9 @@ impl Solution {
             Some(r) => {
                 let mut node = TreeNode::new(r);
                 let idx: i32 = *indexmap.get(&r).unwrap();
-
-                node.right = Solution::build(idx+1, right,  postorder, indexmap.clone());
-
-                node.left = Solution::build(left, idx-1, postorder, indexmap.clone());
+                node.right = Solution::build(idx+1, right,  postorder, indexmap);
+                node.left = Solution::build(left, idx-1, postorder, indexmap);
                 let root = Some(Rc::new(RefCell::new(node)));
-
                 return root;
             }
             None=>{
