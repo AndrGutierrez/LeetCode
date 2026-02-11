@@ -54,7 +54,6 @@ impl Solution {
             return None
         }
         let rootval = postorder.pop(); 
-        // println!("{:?}, {:?}, {:?}", left, right, rootval);
         
         match rootval {
             Some(r) => {
@@ -62,7 +61,6 @@ impl Solution {
                 let idx: i32 = *indexmap.get(&r).unwrap();
 
                 node.right = Solution::build(idx+1, right,  postorder, indexmap.clone());
-        // println!("{:?}", postorder);
 
                 node.left = Solution::build(left, idx-1, postorder, indexmap.clone());
                 let root = Some(Rc::new(RefCell::new(node)));
