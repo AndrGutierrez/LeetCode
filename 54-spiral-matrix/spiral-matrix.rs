@@ -40,9 +40,6 @@ impl Solution {
 
                 let item = matrix[i as usize][j as usize];
                 visited.push(item);
-                if (visited.len() as i32) >= total_items {
-                    break
-                }
                 j+=direction;
                 vr+=1;
             }
@@ -55,12 +52,8 @@ impl Solution {
                     break;
                 }
                 let item = matrix[i as usize][j as usize];
-                //println!("{item}");
                 
                 visited.push(item);
-                                if (visited.len() as i32) >= total_items {
-                    break
-                }
 
             }
             direction*=-1;
