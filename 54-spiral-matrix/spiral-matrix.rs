@@ -31,16 +31,14 @@ impl Solution {
         while (visited.len() as i32) < total_items{
             let mut vr = 0;
             let mut vc = 0;
-            loop {
-                if vr>=row_len {
-                    j-=direction;
-                    break;
-                }
+            while vr < row_len {
                 let item = matrix[i as usize][j as usize];
                 visited.push(item);
                 j+=direction;
                 vr+=1;
             }
+            j-=direction;
+
             loop {
                 i+=direction;
                 vc+=1;
@@ -49,7 +47,6 @@ impl Solution {
                     break;
                 }
                 let item = matrix[i as usize][j as usize];
-                
                 visited.push(item);
 
             }
