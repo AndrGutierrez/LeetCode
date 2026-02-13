@@ -37,10 +37,8 @@ impl Solution {
                     j-=direction;
                     break;
                 }
-                //println!("{j}");
 
                 let item = matrix[i as usize][j as usize];
-                //println!("{item}");
                 visited.push(item);
                 if (visited.len() as i32) >= total_items {
                     break
@@ -48,11 +46,6 @@ impl Solution {
                 j+=direction;
                 vr+=1;
             }
-                            if (visited.len() as i32) >= total_items {
-                    break
-                }
-            //columns
-            //println!("###");
             loop {
 
                 i+=direction;
@@ -75,30 +68,6 @@ impl Solution {
             row_len-=1;
             col_len-=1;
 
-            // break;
-           // println!("###");
-            // ciclos+=1;
-            // if ciclos % 2==0{
-            //     row_len-=1;
-            //     col_len-=1;
-            //     // if m > 3{
-            //     //     row_len-=2;
-            //     // }
-            //     // else {
-            //     //     row_len-=1;
-            //     // }
-            //     // if n > 3{
-            //     //     col_len-=2;
-            //     // }
-            //     // else {
-            //     //     col_len-=1;
-            //     // }
-// 
-            //     i+=direction;
-            //     j+=direction;
-            // println!("{i}, {j}");
-
-//            }
 
         }
         return visited;
