@@ -27,9 +27,8 @@ impl Solution {
 
         let mut row_len = m ;
         let mut col_len = n;
-        let mut ciclos = 0;
+
         while (visited.len() as i32) < total_items{
-            // rows
             let mut vr = 0;
             let mut vc = 0;
             loop {
@@ -37,14 +36,12 @@ impl Solution {
                     j-=direction;
                     break;
                 }
-
                 let item = matrix[i as usize][j as usize];
                 visited.push(item);
                 j+=direction;
                 vr+=1;
             }
             loop {
-
                 i+=direction;
                 vc+=1;
                 if vc >= col_len {
