@@ -30,9 +30,8 @@ class Solution:
             for element in range(level_size):
                 node = q.popleft()
                 if node:
-                    size = len(current_level)
-                    if size >= 1:
-                        current_level[size-1].next = node
+                    if len(current_level) >= 1:
+                        current_level[len(current_level)-1].next = node
                     current_level.append(node)
                     q.append(node.left)
                     q.append(node.right)
