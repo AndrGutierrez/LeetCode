@@ -27,7 +27,7 @@ class Solution:
         while q:
             current_level = []
             level_size = len(q)
-            for element in range(level_size):
+            for _ in range(level_size):
                 node = q.popleft()
                 if node:
                     if len(current_level) >= 1:
