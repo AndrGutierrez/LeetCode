@@ -30,12 +30,14 @@ class Solution:
             for element in range(level_size):
                 node = q.popleft()
                 if node:
+                    if len(current_level) >= 1:
+                        current_level[len(current_level)-1].next = node
                     current_level.append(node)
                     q.append(node.left)
                     q.append(node.right)
                     
                     
-            for i, node in enumerate(current_level):
-                if i+1 < len(current_level):
-                    node.next = current_level[i+1]
+            # for i, node in enumerate(current_level):
+            # if i+1 < len(current_level):
+            #        node.next = current_level[i+1]
         return root
