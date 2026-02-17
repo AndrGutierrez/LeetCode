@@ -25,19 +25,15 @@ impl Solution {
                 }
             }
         }
+        
         for i in 0..matrix.len() {
             for j in 0..matrix[i].len() {
-                if rows_with_zeros.contains_key(&i) || columns_with_zeros.contains_key(&j) {
-                    matrix[i][j] = 0;
+                match (rows_with_zeros.get(&i), columns_with_zeros.get(&j)) {
+                    (Some(val), _) | (_, Some(val))  => {
+                        matrix[i][j] = 0;           
+                    },
+                    _ =>{}
                 }
-                // match (rows_with_zeros.get(&i), rows_with_zeros.get(&j)) {
-                //     (Some(val), _) | (_, Some(val))  => {
-                //         matrix[i][j] = 0;
-                //         println!("{:?}, {:?}", i,j);
-           // 
-                //     },
-                //     _ =>{}
-                // }
             }
         }
         // println!("{:?}", rows_with_zeros);
