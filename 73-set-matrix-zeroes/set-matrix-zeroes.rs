@@ -25,7 +25,7 @@ impl Solution {
                 }
             }
         }
-        
+
         for i in 0..matrix.len() {
             for j in 0..matrix[i].len() {
                 match (rows_with_zeros.get(&i), columns_with_zeros.get(&j)) {
@@ -36,8 +36,6 @@ impl Solution {
                 }
             }
         }
-        // println!("{:?}", rows_with_zeros);
-        // println!("{:?}", columns_with_zeros);
 
     }
 }
