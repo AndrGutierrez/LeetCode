@@ -27,7 +27,6 @@ class Solution:
         n = len(board[0])
 
         neighbormap= [[0 for col in range(n)] for row in range(m)]
-        # print(neighbormap)
         for i, row in enumerate(board):
             for j, column in enumerate(row):
                 left = j -1
@@ -49,7 +48,7 @@ class Solution:
                             alive_neighbors += board[k][l]
 
                 neighbormap[i][j] = alive_neighbors
-                
+
         for i, row in enumerate(board):
             for j, column in enumerate(row):
                 alive_neighbors = neighbormap[i][j]
