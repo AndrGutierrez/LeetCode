@@ -49,6 +49,7 @@ class Solution:
                             alive_neighbors += board[k][l]
 
                 neighbormap[i][j] = alive_neighbors
+                
         for i, row in enumerate(board):
             for j, column in enumerate(row):
                 alive_neighbors = neighbormap[i][j]
@@ -57,4 +58,3 @@ class Solution:
                     if alive_neighbors < 2 or alive_neighbors > 3: board[i][j] = 0
                 elif alive_neighbors == 3:
                     board[i][j] = 1
-        # print(neighbormap)
