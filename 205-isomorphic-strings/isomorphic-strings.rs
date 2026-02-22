@@ -17,23 +17,23 @@ impl Solution {
         let characters = s.chars();
         let mut res = true;
         let n: usize = s.len();
-        for i in 0..n {
-            let si = s.chars().nth(i);
-            let ti = t.chars().nth(i);
+        let sbytes = s.as_bytes();
+        let tbytes = t.as_bytes();
 
-            match (si, ti) {
-                (Some(sir), Some(tir))=>{
-                    let already_mapped = tmap.entry(tir).or_insert(sir);
-                    if *already_mapped != sir {
-                        return false;
-                    }
-                    let replace: char = *map.entry(sir).or_insert(tir);
-                    if replace != tir{
-                        return false;
-                    }                  
-                },  
-                _=>{}
+        for i in 0..n {
+            let sir = sbytes[i] as char;
+            let tir = tbytes[i] as char;
+
+
+            let already_mapped = tmap.entry(tir).or_insert(sir);
+            if *already_mapped != sir {
+                return false;
             }
+
+            let replace: char = *map.entry(sir).or_insert(tir);
+            if replace != tir{
+                return false;
+            }                  
         }
         return res;
     }
