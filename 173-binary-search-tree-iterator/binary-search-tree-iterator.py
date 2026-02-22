@@ -10,18 +10,17 @@ class BSTIterator:
     def __init__(self, root: Optional[TreeNode]):
         self.sequence = deque()
         self.dfs(root)
-        print(self.sequence)
     def next(self) -> int:
         current = self.sequence.popleft()
         return current
 
     def hasNext(self) -> bool:
         return len(self.sequence) > 0
+
     def dfs(self, root):
         if root is None: return None
         self.dfs(root.left)
         self.sequence.append(root.val)
-
         self.dfs(root.right)
 
 
