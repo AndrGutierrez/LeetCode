@@ -23,7 +23,6 @@ class Solution:
             self.h+=1
         # print(self.h)
         self.dfs(root, 0)
-        print(self.h-1, self.bottomamount)
         return 2**(self.h -1) + self.bottomamount -1 
 
     def dfs(self, node, level):
