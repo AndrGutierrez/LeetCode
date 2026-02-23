@@ -21,9 +21,8 @@ class Solution:
         while current:
             current = current.left or current.right
             self.h+=1
-        # print(self.h)
         self.dfs(root, 0)
-        return 2**(self.h -1) + self.bottomamount -1 
+        return 2**(self.h -1) + self.bottomamount - 1 
 
     def dfs(self, node, level):
         if node is None or level == self.h-1: return None
