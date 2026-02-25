@@ -40,6 +40,5 @@ class Solution:
         if (level < self.lcalevel) and not (self.pfound and self.qfound) and (self.pfound or self.qfound):
             self.lca = node
             self.lcalevel = level
-        if self.lca: print(node.val, self.lca.val)
 
         self.preOrder(node.right, level + 1)
