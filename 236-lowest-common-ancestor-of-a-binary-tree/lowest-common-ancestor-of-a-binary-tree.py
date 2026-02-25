@@ -28,7 +28,6 @@ class Solution:
 
     def preOrder(self, node, level):
         if node is None: return None
-
         
         self.preOrder(node.left, level + 1)
         if node.val == self.p or node.val == self.q:
