@@ -20,7 +20,6 @@ use std::collections::HashMap;
 impl Solution {
     pub fn two_sum(mut nums: Vec<i32>, target: i32) -> Vec<i32> {
         let n = nums.len();
-        let unit: usize = 1;
         let mut res: Vec<i32> = vec![];
         let mut map: HashMap<i32, usize> = HashMap::new();
         for (i, num) in nums.iter().enumerate() {
@@ -32,7 +31,6 @@ impl Solution {
                 _=>{}
             } 
             let entry = map.entry(*num).or_insert(i);
-
         }      
         return vec![];
     }
