@@ -28,8 +28,5 @@ class Solution:
                 res.append(levelsum/n)
 
             level = list(q)
-            for item in level:
-                print(item.val, end= ", ")
-            print()
 
         return res
