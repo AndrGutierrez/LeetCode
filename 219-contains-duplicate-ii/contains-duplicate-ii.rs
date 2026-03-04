@@ -12,6 +12,7 @@ impl Solution {
         for (i, num) in nums.iter().enumerate(){
             let mut e = map.entry(*num).or_insert(vec![]);
             e.push(i as i32);
+            
         }
         for value in map.values(){
             if value.len() > 1 as usize{
