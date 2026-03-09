@@ -21,11 +21,11 @@ class Solution:
         for i in range(1, len(self.nums)):
             diff = self.nums[i] - self.nums[i-1]
             diffs.append(diff)
-        return min(diffs)        
+        return min(diffs) 
+               
     def inOrder(self, root):
         if root is None:
             return None
-        
         self.inOrder(root.left)
         self.nums.append(root.val)
         self.inOrder(root.right)
