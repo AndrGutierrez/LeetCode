@@ -18,7 +18,6 @@ class Solution:
         
         if not root: return 
         self.inOrder(root.left)
-        print(root.val)
         self.ordered.append(root.val)
         self.inOrder(root.right)
         
