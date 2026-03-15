@@ -44,6 +44,7 @@ class Solution:
                     if node not in self.visited:
                         self.bfs(node, graph)      
         return self.res
+        
     def bfs(self, initial, graph):
         q = deque([initial])
         self.visited.add(initial)
