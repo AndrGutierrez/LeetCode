@@ -19,9 +19,6 @@ class Solution:
         n = len(board[0])
         self.visited = set()
         graph = {}
-        # for i in board:
-        #     print(i)
-        # print("###")
         for i, _ in enumerate(board):
             for j, _ in enumerate(board[i]):
                 name = f'{i},{j}'
@@ -36,8 +33,6 @@ class Solution:
             for j, _ in enumerate(board[i]):
                 if board[i][j] == 'O':
                     self.bfs(graph, f'{i},{j}', board)
-        # for i in board:
-        #     print(i)
 
     def bfs(self, graph, node, board):
         q = deque([node])
