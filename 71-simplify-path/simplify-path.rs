@@ -36,9 +36,8 @@ impl Solution {
             }
         }
         for item in q {
-            if res.len()  >1{
-            res.push_str("/" as &str);
-
+            if res.len() > 1{
+                res.push_str("/" as &str);
             }
             res.push_str(item);
         }
