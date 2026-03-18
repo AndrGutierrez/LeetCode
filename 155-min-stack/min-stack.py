@@ -4,7 +4,6 @@ class Node:
         self.next = node
         self.prev = prev
         self.smallest = None
-        self.largest = None
 
 class MinStack:
 
