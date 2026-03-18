@@ -9,7 +9,6 @@ class Node:
 class MinStack:
 
     def __init__(self):
-        # self.largest = None
         self.smallest = None
         self.current = None
         
@@ -17,7 +16,6 @@ class MinStack:
     def push(self, val: int) -> None:
         if self.current:
             new_node = Node(val, None, self.current)
-            # new_node.largest = max(self.current.largest, val)
 
             new_node.smallest = min(self.current.smallest, val)
 
@@ -25,7 +23,6 @@ class MinStack:
             self.current = self.current.next
         else:
             self.current = Node(val)
-            # self.current.largest = val
             self.current.smallest = val
             
         
