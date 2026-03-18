@@ -5,7 +5,6 @@ class Solution:
         if len(tokens) == 1:
             return int(tokens[0])
         q = deque()
-        ans = math.inf
         for token in tokens:
             match token:
                 case '*':
