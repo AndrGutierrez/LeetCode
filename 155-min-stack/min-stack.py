@@ -15,7 +15,6 @@ class MinStack:
     def push(self, val: int) -> None:
         if self.current:
             new_node = Node(val, None, self.current)
-
             new_node.smallest = min(self.current.smallest, val)
 
             self.current.next = new_node
