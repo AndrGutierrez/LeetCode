@@ -91,7 +91,6 @@ class Solution:
         number = ''
 
         for c in reversed(s):
-
             if c == ' ': continue
             if c != '(' and c != '+' and c!= ')' and c!= '-':
                 number= c + number
@@ -108,14 +107,12 @@ class Solution:
                     if item == '-':
                         item = q.pop()
                         q.append(-int(item))
-                        # for some reason the positive is still there and cancels out just try this in the meantime
                         q.append(-int(item))
 
                         continue
                     if item == '+':
                         item = q.pop()
                         continue
-                    # print(item)
 
                     in_parentheses+=int(item)
                     item = q.pop()
@@ -132,11 +129,8 @@ class Solution:
             if item == '-':
                 item = q.pop()
                 q.append(-int(item))
-                # for some reason the positive is still there and cancels out just try this in the meantime
-                # q.append(-int(item))
                 continue
             if item == '+':
                 continue
-            # print(item
             result+=int(item)
         return result
