@@ -39,6 +39,7 @@ class Solution:
         in_degree = [0]*numCourses
         has_pre_requisites = set()
         q = deque()
+        coursed = 0
 
 
         for (course, prerequisite) in prerequisites:
@@ -50,7 +51,6 @@ class Solution:
                 q.append(i)
             
 
-        coursed = 0
         while q:
             node = q.popleft()
             coursed+=1
