@@ -37,7 +37,6 @@ class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         graph = defaultdict(set)
         in_degree = [0]*numCourses
-        has_pre_requisites = set()
         q = deque()
         coursed = 0
 
