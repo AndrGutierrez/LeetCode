@@ -43,7 +43,6 @@ impl Solution {
             head2 = aux.next;
         } 
         items.sort();
-        println!("{:?}", items);
         let mut head =  Box::new(ListNode::new(0));
         let mut curr = &mut head;
         for item in items {
