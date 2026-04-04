@@ -58,11 +58,9 @@ class Solution:
         while current.next:
             i+=1
             if i % k == 0:
-                # c = h
                 for item in q:
                     c.next = ListNode(item.val)
                     c = c.next
-                #     c.next= item
                 q = deque()
             q.appendleft(current.next)
             current = current.next
