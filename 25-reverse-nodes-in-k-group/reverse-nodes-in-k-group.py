@@ -19,34 +19,7 @@ current.next = the next in the array
 
 tough if i make a queue...
 """
-# 
-# class Solution:
-#     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-#         current = head
-#         q = deque([current])
-#         qs = []
-#         i = 0
-#         while current.next:
-#             i+=1
-#             if i % k == 0:
-#                 h = q[0]
-#                 # c = h
-#                 for item in q:
-#                     print(item.val)
-#                 #     c.next= item
-#                 q= deque()
-#             
-#             q.appendleft(current.next)
-#             current = current.next
-#         if q and (len(q) / k) == 1:
-#             for item in q:
-#                 print(item.val)
-#         elif q:
-#             for item in list(reversed(q)):
-#                 print(item.val)
-# 
 
-# 
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         current = head
@@ -64,6 +37,7 @@ class Solution:
                 q = deque()
             q.appendleft(current.next)
             current = current.next
+        
         if q and (len(q) / k) == 1:
             for item in q:
                 c.next = ListNode(item.val)
