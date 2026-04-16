@@ -28,7 +28,7 @@ for c in candidates:
 from collections import Counter
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        candidates = sorted(candidates)
+        # candidates = sorted(candidates)
         res =[]
         solution_ocurrences = []
         def backtrack(curr):
@@ -39,7 +39,6 @@ class Solution:
                 if ocurrences not in solution_ocurrences:
                     solution_ocurrences.append(ocurrences)
                     res.append(curr[:])
-                #res.append(curr[:])
 
                 return
             for c in candidates:
