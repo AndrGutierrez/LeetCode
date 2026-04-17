@@ -59,7 +59,6 @@ class Solution:
         }
         def backtrack(curr):
             if len(curr) == total:
-                # print(curr)
 
                 res.append(curr[:])
                 return
@@ -88,6 +87,4 @@ class Solution:
             if len(q) ==0 and valid:
                 finalres.append(r)
 
-        print(finalres)
-        print(len(res))
         return finalres
