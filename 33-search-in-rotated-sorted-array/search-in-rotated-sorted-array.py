@@ -38,7 +38,6 @@ but we can always compare the mid element to the first element
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
 
-        if len(nums) == 1: return 0 if target == nums[0] else -1
 
         rotated = False
         if nums[0] > nums[-1]:
@@ -61,7 +60,6 @@ class Solution:
 
             else:
                 low = mid+1
-        print(rotated_index)
         is_in_left = self.binary_search(nums[:rotated_index], target, 0)
         is_in_right= self.binary_search(nums[rotated_index:], target, rotated_index)
 
