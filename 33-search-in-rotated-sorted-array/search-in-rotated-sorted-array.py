@@ -52,9 +52,6 @@ class Solution:
         while high >= low:
 
             mid = low + (high-low)//2
-            if nums[0] == nums[mid]:
-                rotated_index = mid + 1
-                break
             if nums[0] > nums[mid]: 
                 if nums[mid-1] > nums[mid]:
                     rotated_index = mid
