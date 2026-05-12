@@ -24,7 +24,7 @@ class Solution:
         # return res
         # Tabulation
         if not nums: return 0
-        if len(nums) <= 2: return max(nums)
+        if len(nums) == 1: return nums[0]
         n = len(nums)
         robbed = [0] * n
         robbed[0], robbed[1] = nums[0], max(nums[0], nums[1])
