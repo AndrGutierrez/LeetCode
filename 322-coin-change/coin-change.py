@@ -66,11 +66,9 @@ class Solution:
         for i in range(1, amount+1):
             remaining = i
             for coin in coins:
-                #print("###")
                 remaining = i-coin
-                #print(i, dp[i], remaining, coin)
                 if remaining >= 0:
                     dp[i] = min(dp[i], dp[remaining]+1)
-        print(dp)
+
         res = -1 if dp[-1] == math.inf else dp[-1]
         return res
