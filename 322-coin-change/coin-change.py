@@ -69,6 +69,6 @@ class Solution:
                 remaining = i-coin
                 if remaining >= 0:
                     dp[i] = min(dp[i], dp[remaining]+1)
-
+        # so time complexity os O(nk) no n² as i thought
         res = -1 if dp[-1] == math.inf else dp[-1]
         return res
