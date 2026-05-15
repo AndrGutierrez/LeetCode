@@ -62,7 +62,6 @@ class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         dp = [math.inf] * (amount + 1)
         dp[0] = 0
-        # coins = sorted(coins)
         for i in range(1, amount+1):
             remaining = i
             for coin in coins:
