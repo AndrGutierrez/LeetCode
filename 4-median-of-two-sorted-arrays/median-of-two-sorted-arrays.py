@@ -52,21 +52,21 @@ class Solution:
         high = m
 
         while True:
-            take1 = low + (high-low)//2
-            take2 =  maxHalfSize - take1
+            leftSize = low + (high-low)//2
+            rightSize =  maxHalfSize - leftSize
 
-            maxleft1= -math.inf if take1 == 0 else nums1[take1-1]
-            minright1 = math.inf if take1 == m else nums1[take1]
+            maxleft1= -math.inf if leftSize == 0 else nums1[leftSize-1]
+            minright1 = math.inf if leftSize == m else nums1[leftSize]
             
-            maxleft2 = -math.inf if take2 == 0 else nums2[take2 - 1]
-            minright2 = math.inf if take2 == n else nums2[take2]
+            maxleft2 = -math.inf if rightSize == 0 else nums2[rightSize - 1]
+            minright2 = math.inf if rightSize == n else nums2[rightSize]
 
             if maxleft1 > minright2:
-                high =  take1 -1
+                high =  leftSize -1
                 continue
 
             if maxleft2 > minright1:
-                low = take1 +1
+                low = leftSize + 1
                 continue 
             
             median = max(maxleft1, maxleft2)
