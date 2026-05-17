@@ -30,7 +30,6 @@ class Solution:
         for i in range(n):
             maxLatest= max([dp[j] for j in range(0,i) if nums[j] < nums[i]] +[-float("inf")])
             if maxLatest != -float("inf"):
-                # print(i, maxLatest)
                 dp[i] = maxLatest + 1
                 res = max(res,dp[i])
             else:
