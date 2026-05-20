@@ -35,5 +35,4 @@ class Solution:
                         if dp[i][j] == 0: dp[i][j] = -float("inf")
         res = dp[-1][-1] if dp[-1][-1] != -float("inf") else 0
 
-        print(dp)
         return res
