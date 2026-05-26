@@ -19,6 +19,8 @@ class Solution:
         n = len(points)
         slopes = defaultdict(lambda: defaultdict(int))
         visited = set()
+        res = 0
+
         for i in range(n):
             (x1, y1) = points[i] 
             for j in range(n):
@@ -30,7 +32,5 @@ class Solution:
                         slopes[i][slope]+=1
                     else:
                         slopes[i][0]+=1
-        res = 0
-        for slope in slopes.keys():
-            res = max(res,(max(slopes[slope].values())))
+            res = max(res, max(slopes[i].values() or [0]))
         return res+1
