@@ -23,14 +23,15 @@ class Solution:
 
         for i in range(n):
             (x1, y1) = points[i] 
+            current_max = 0
             for j in range(n):
                 (x2,y2) = points[j]
                 
                 if j!=i and (x2,y2) not in visited:
+                    slope = 0
                     if x2 != x1:
                         slope = str((y2-y1)/(x2-x1))
-                        slopes[i][slope]+=1
-                    else:
-                        slopes[i][0]+=1
-            res = max(res, max(slopes[i].values() or [0]))
+                    slopes[i][slope]+=1
+                    current_max = max(slopes[i][slope], current_max)
+            res = max(res, current_max)
         return res+1
