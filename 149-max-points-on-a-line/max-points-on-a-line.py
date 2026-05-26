@@ -26,7 +26,6 @@ class Solution:
             current_max = 0
             for j in range(n):
                 (x2,y2) = points[j]
-                
                 if j!=i and (x2,y2) not in visited:
                     slope = 0
                     if x2 != x1:
