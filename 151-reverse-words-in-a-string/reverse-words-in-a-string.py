@@ -12,4 +12,4 @@ class Solution:
                 curr = ''            
         if curr is not '':
             q.appendleft(curr)
-        return " ".join(list(q))
+        return " ".join(q)
