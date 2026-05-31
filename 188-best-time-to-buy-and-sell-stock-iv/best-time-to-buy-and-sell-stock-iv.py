@@ -10,7 +10,7 @@ class Solution:
 
         n = len(prices)
         for price in prices:
-            for j in range(k ):
+            for j in range(k):
                 costs[j + 1] = min(costs[j + 1], price - profits[j])
                 profits[j + 1] = max(profits[j + 1], price - costs[j + 1])
         return profits[k]
