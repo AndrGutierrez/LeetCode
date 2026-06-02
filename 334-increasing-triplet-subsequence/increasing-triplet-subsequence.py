@@ -20,7 +20,6 @@ class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
             current_tuplet = None
             smallest = float("inf")
-            res = False
             for num in nums:
                 if num > smallest:
                     if current_tuplet:
@@ -29,6 +28,6 @@ class Solution:
                         else: current_tuplet = (smallest, num)
                     else:
                         current_tuplet= (smallest, num)
-                elif num < smallest:
+                else:
                     smallest = num
-            return res
+            return False
