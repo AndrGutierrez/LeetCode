@@ -18,16 +18,13 @@ else we make another
 """
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
-            current_tuplet = None
+            current_tuplet = (float("inf"), float("inf"))
             smallest = float("inf")
             for num in nums:
                 if num > smallest:
-                    if current_tuplet:
                         if num > current_tuplet[1]:
                             return True
-                        else: current_tuplet = (smallest, num)
-                    else:
-                        current_tuplet= (smallest, num)
+                        current_tuplet = (smallest, num)
                 else:
                     smallest = num
             return False
