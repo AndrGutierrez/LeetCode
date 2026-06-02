@@ -22,9 +22,9 @@ class Solution:
             smallest = float("inf")
             for num in nums:
                 if num > smallest:
-                        if num > current_tuplet[1]:
-                            return True
-                        current_tuplet = (smallest, num)
+                    if num > current_tuplet[1]:
+                        return True
+                    current_tuplet = (smallest, num)
                 else:
                     smallest = num
             return False
