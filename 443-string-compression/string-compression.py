@@ -17,17 +17,8 @@ class Solution:
         pointer = 0
         for i in range(1, n):
             c = chars[i]
-            # if i == n-1 and c != latest: 
-# 
-            #     count+=1
-            #     pointer +=1
-            #     chars[pointer] = c
-            #     pointer =1
 
-
-            if c != latest: # or (i == n-1 and c == latest):
-                # if i == n-1:
-                #     count+=1
+            if c != latest:
                 chars[pointer] = latest
                 pointer +=1
                 if count > 1:
@@ -53,7 +44,6 @@ class Solution:
             count = 1
 
         remove = len(chars) - pointer 
-        print(chars)
         for i in range(remove):
             chars.pop()
         return len(chars)
