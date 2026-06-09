@@ -26,4 +26,3 @@ class Solution:
                 right = left + 1
             else:
                 right +=1
-            i+=1
