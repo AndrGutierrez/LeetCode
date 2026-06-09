@@ -27,6 +27,3 @@ class Solution:
             else:
                 right +=1
             i+=1
-            #if i >= 100:
-            #    print("a")
-            #    break
