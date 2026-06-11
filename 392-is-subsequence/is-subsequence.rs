@@ -14,7 +14,6 @@ impl Solution {
             let current_s: char = s.chars().nth(left).unwrap();
 
             if current_s == c {
-            println!("{:?}, {:?}", current_s, c);
 
                 left+=1;
                 if left == target {
