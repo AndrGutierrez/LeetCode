@@ -5,12 +5,12 @@ impl Solution {
     pub fn is_subsequence(s: String, t: String) -> bool {
         let mut left: usize = 0;
         let right: i32 = 0;
-        let k = s.len();
-        if k == 0 {
+        let target = s.len();
+        if target == 0 {
             return true
         }
-        let target = k ;
         for c in t.chars() {
+
             let current_s: char = s.chars().nth(left).unwrap();
 
             if current_s == c {
