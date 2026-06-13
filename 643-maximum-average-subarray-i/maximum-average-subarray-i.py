@@ -20,7 +20,6 @@ class Solution:
         n = len(nums)
         res = sum(nums[0:k])
         latest = res
-        # if n == 1: return nums[0]
         for i in range(n-k):
             left = i
             right = i + k
