@@ -24,6 +24,5 @@ class Solution:
             if s[i+k] in vowels:
                 latest +=1
 
-            print(s[i], s[i+k])
             res = max(latest, res)
         return res
