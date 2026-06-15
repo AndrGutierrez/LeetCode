@@ -11,7 +11,6 @@ class Solution:
         delete_used = False
         all_ones = True
         while right < n:
-            print(left, right)
             if nums[left] == 0:
                 left+=1
                 right = max(left, right)
