@@ -45,7 +45,5 @@ class Solution:
                 if counter1.get(c1): s1[counter1.get(c1)]+=1 
                 if counter2.get(c1): s2[counter2.get(c1)]+=1
 
-                print(c1, counter1.get(c1), counter2.get(c1))
 
-        print(s1, s2)
         return s1==s2
