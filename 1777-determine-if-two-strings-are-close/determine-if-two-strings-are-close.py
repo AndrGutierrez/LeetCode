@@ -29,6 +29,14 @@ replacement we can move on, then check again until....... the amount to replace 
 so if we replace all these will we get the same amount of what we're looking for?
 
 if we remove the matches and just stay with a string that has the diff...............
+
+oks so if there's a diff there should be the same amount of differences like
+   word1  word2
+a  3      2
+b  2      1
+c  1      3
+
+like if the columns are the same there must be a way to be rearranged, we can sort but we can also check that it exists and not sort
 """
 
 from collections import Counter
