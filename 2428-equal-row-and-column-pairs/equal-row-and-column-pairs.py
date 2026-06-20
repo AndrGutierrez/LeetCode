@@ -16,8 +16,6 @@ class Solution:
         col_aux = ['' for i in range(n)]
         res = 0
         
-        for row in grid:
-            print(row)
         for i in range(n):
             curr_row = ''
             for j in range(n):
@@ -27,8 +25,6 @@ class Solution:
             row_strs[curr_row]+=1
 
         col_strs = Counter(col_aux)
-        print(col_strs)
-        print(row_strs)
         
 
         for key in col_strs.keys():
