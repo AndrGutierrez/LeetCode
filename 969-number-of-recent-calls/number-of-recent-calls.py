@@ -8,23 +8,24 @@ return number of requests in the past [t - 3000, t]
 we can easily do O(n) if we use a queue and just pop, but not quite popping
 
 so, if we just do a backwards while loop, until the time is > t-3000
+
+we can do the while loop once, if the diff between the first and the current is > 3000,
+
+popleft
 """
 
 class RecentCounter:
 
     def __init__(self):
-        self.requests = []
+        self.requests = deque()
+        self.latest = None
 
     def ping(self, t: int) -> int:
-        i = len(self.requests) - 1
-        res = 1
-        while i >= 0:
-            if t - self.requests[i] > 3000:
-                break
-            else:
-                res+=1
-            i-=1
         self.requests.append(t)
+        if len(self.requests) >=2:
+            while self.requests[-1] - self.requests[0] > 3000:
+                self.requests.popleft()
+        res = len(self.requests)
         return res
 
 
