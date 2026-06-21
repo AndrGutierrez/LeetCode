@@ -42,6 +42,4 @@ class Solution:
                     q.pop()
                     continue
             else: q.append(asteroid)
-            # latest = q.pop()
-            # if (asteroid > 0 and latest < 0) or (asteroid < 0 and latest > 0):
         return list(q)
