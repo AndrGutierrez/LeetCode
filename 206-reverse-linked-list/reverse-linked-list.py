@@ -10,15 +10,11 @@ return reversed list inplace
 """
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head: return None
+        prev = None
         curr = head
-        nums = [curr.val]
-        while curr.next:
-            curr = curr.next
-            nums.append(curr.val)
-        headres = ListNode(nums[-1])
-        curr = headres
-        for num in list(reversed(nums))[1:]:
-            curr.next = ListNode(num)
-            curr = curr.next
-        return headres
+        while curr:
+            next_temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_temp
+        return prev
