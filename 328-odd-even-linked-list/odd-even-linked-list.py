@@ -30,30 +30,5 @@ class Solution:
                     even = even.next
                 curr = curr.next
 
-        #odd.next = firsteven    
-        # head.next = firsteven  
         odd.next = firsteven
         return head
-
-        
-        # lastOdd = None
-        # lastEven = None
-        # current = head
-        # i = 0
-        # while current.next:
-        #     odd = i % 2 == 0
-        #     if odd:
-        #         if lastOdd:
-        #             lastOdd.next = current
-        #         else:
-        #             firstOdd = current
-        #         lastOdd = current
-        #     else:
-        #         if lastEven:
-        #             lastEven.next = current
-        #             current.next = first
-        #         else: 
-        #             firstEven = current
-        #         lastEven = current
-        #     i+=1
-        # return firstEven
