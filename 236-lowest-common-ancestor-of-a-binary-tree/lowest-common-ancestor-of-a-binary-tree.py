@@ -5,39 +5,37 @@
 #         self.left = None
 #         self.right = None
 
-# values are unique
-# we allow a node to be descendant of itself (see example 2)
+"""
+ok so we do dfs, until we find both
 
-# maybe dfs, in order?
-# it can only be valid if theyre in the same tree
+ok so we can do dfs, and each node and on each iteration we return, if we find both, set it
 
-# traverse the tree in preOrder, if you find a p or q, save current as last common ancestor if the level is higher(smaller since we start from 0)
-# if found p but not q, and you go on, save the highest level thing as latest common ancestor 
+inorder, register if p or q, when we get to a root, save it as lsa untilw we find the other
+"""
 import math
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        self.lca = None
+        self.res = None
+                
         self.p = p.val
         self.q = q.val
-        self.pfound = False
-        self.qfound = False
-        self.lcalevel = math.inf
+        self.p_found = False
+        self.q_found = False
+
+        self.lca_level = float("inf")
         self.preOrder(root, 0)
+        return self.res
+    def preOrder(self, root, level):
+        if root is None: return
+        self.preOrder(root.left, level+1)
+        if root.val == self.p or root.val == self.q:
+            if root.val == self.p: self.p_found = True
+            if root.val == self.q: self.q_found = True
+            if level < self.lca_level:
+                self.res = root
+                self.lca_level = level 
+        if (level < self.lca_level) and self.p_found ^ self.q_found:
+            self.res = root
+            self.lca_level = level
 
-        return self.lca
-
-    def preOrder(self, node, level):
-        if node is None: return None
-        
-        self.preOrder(node.left, level + 1)
-        if node.val == self.p or node.val == self.q:
-            if node.val == self.p: self.pfound = True
-            if node.val == self.q: self.qfound = True
-            if level < self.lcalevel:
-                self.lca = node
-                self.lcalevel = level
-        if (level < self.lcalevel) and not (self.pfound and self.qfound) and (self.pfound or self.qfound):
-            self.lca = node
-            self.lcalevel = level
-
-        self.preOrder(node.right, level + 1)
+        self.preOrder(root.right, level+1)
