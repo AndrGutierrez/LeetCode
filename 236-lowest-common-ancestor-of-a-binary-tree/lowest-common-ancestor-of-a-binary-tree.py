@@ -35,7 +35,7 @@ class Solution:
                 self.res = root
                 self.lca_level = level 
     
-        if (level < self.lca_level) and self.p_found ^ self.q_found:
+        if (level < self.lca_level) and (self.p_found ^ self.q_found):
             self.res = root
             self.lca_level = level
 
