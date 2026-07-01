@@ -22,7 +22,7 @@ class Solution:
         self.p_found = False
         self.q_found = False
 
-        self.lca_level = float("inf")
+        self.lca_level = math.inf
         self.preOrder(root, 0)
         return self.res
     def preOrder(self, root, level):
