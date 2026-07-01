@@ -12,7 +12,6 @@ ok so we can do dfs, and each node and on each iteration we return, if we find b
 
 inorder, register if p or q, when we get to a root, save it as lsa untilw we find the other
 """
-import math
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         self.res = None
@@ -22,7 +21,7 @@ class Solution:
         self.p_found = False
         self.q_found = False
 
-        self.lca_level = math.inf
+        self.lca_level = float("inf")
         self.preOrder(root, 0)
         return self.res
     def preOrder(self, root, level):
