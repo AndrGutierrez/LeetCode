@@ -20,8 +20,6 @@ class Solution:
         graph = defaultdict(list)
         visited = set()
         visited.add(f'{entrance[0]},{entrance[1]}')
-        for row in maze:
-            print(row)
         for i in range(m):
             for j in range(n):
                 if i >= 1:
