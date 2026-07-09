@@ -26,16 +26,16 @@ class Solution:
                         initial_fresh_amount += 1
 
                 if i >=1:
-                    if grid[i - 1][j] == 1 or grid[i - 1][j] == 2:
+                    if grid[i - 1][j] == 1:
                         graph[(i, j)].append((i - 1, j))
                 if j >=1:
-                    if grid[i][j - 1] == 1 or grid[i][j - 1] == 2:
+                    if grid[i][j - 1] == 1:
                         graph[(i, j)].append((i, j - 1))
                 if i < m - 1:
-                    if grid[i + 1][j] == 1 or grid[i + 1][j] == 2:
+                    if grid[i + 1][j] == 1:
                         graph[(i, j)].append((i + 1, j))
                 if j < n - 1:
-                    if grid[i][j + 1] == 1 or grid[i][j + 1] == 2:
+                    if grid[i][j + 1] == 1:
                         graph[(i, j)].append((i, j + 1))
         if orange_amount == 0 or initial_fresh_amount == 0: return 0
         if  initial_rotten_amount == 0: return -1
