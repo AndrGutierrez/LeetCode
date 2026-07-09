@@ -56,7 +56,6 @@ class Solution:
                                 update.append(node)
             for i, j in update:
                 grid[i][j] = 2
-            print(len(visited), orange_amount)
             if len(visited) >= orange_amount: break
             elif new == 0:
                 return -1
