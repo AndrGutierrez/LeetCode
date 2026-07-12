@@ -40,6 +40,9 @@ class Solution:
             
             # here we check if this is better,
             # because we might change the (num2, nums1) which we maximized originally
-            # by getting the gratest nums2, but this way we get combinations that might be better
+            # by getting the gratest nums2, but this way we get combinations that might be better,
+            # we do the multiplication for pairs[i][1]
+            # and not like min() because if there's something better, the original was switched, but 
+            # the others stay the same
             res = max(res, top_k_sum * pairs[i][1])
         return res
