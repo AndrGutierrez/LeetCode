@@ -37,6 +37,8 @@ class Solution:
             top_k_sum += pairs[i][0]
             heapq.heappush(top_k_heap, pairs[i][0])
             
-            # here we check if this is better, because we might change the num2
+            # here we check if this is better,
+            # because we might change the (num2, nums1) which we maximized originally
+            # by getting the gratest nums2, but this way we get combinations that might be better
             res = max(res, top_k_sum * pairs[i][1])
         return res
