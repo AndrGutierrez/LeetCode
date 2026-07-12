@@ -33,6 +33,7 @@ class Solution:
         res = top_k_sum * pairs[k-1][1]
         # maximize nums1,  
         for i in range(k, len(nums1)):
+            # we remove the smallest element from the heap and add a new one from nums1
             top_k_sum -= heapq.heappop(top_k_heap)
             top_k_sum += pairs[i][0]
             heapq.heappush(top_k_heap, pairs[i][0])
