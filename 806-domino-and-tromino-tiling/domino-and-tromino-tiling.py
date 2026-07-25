@@ -84,6 +84,6 @@ class Solution:
         p[2] = 1
 
         for k in range(3, n + 1):
-            f[k] = (f[k - 1] + f[k - 2] + 2 * p[k - 1]) %mod
-            p[k] = (p[k - 1] + f[k - 2]) %mod
-        return f[n]
+            f[k] = (f[k - 1] + f[k - 2] + 2 * p[k - 1]) 
+            p[k] = (p[k - 1] + f[k - 2])
+        return f[n] % mod
