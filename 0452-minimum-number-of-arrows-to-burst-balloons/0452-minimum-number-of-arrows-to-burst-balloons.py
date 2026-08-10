@@ -24,7 +24,6 @@ class Solution:
         k = -float('inf')
         overlapping = 0
 
-        print(points)
         for x1, x2 in points:
             if x1 <= k:
                 overlapping += 1
