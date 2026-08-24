@@ -33,8 +33,6 @@ class Solution:
                 seen = {}
                 res+=1
                 continue
-                # left = i
-                # right = i +1
             else: 
                 seen[c] = 1
                 if i == len(s)-1: res+=1
