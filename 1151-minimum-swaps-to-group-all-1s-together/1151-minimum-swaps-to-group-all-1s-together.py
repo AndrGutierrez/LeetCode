@@ -21,12 +21,11 @@ ok this is two pointers let's see tomorrow if i can solve it m
 class Solution:
     def minSwaps(self, data: List[int]) -> int:
         left = 0
-        right = sum(data) 
+        right = sum(data)
         n = len(data)
         amount_of_zeros = right - left - sum(data[left:right])
         res = amount_of_zeros
         left+=1
-        right
         for i in data[1:(n - right)+1]:
             if data[left - 1] == 0:
                 amount_of_zeros -=1 
