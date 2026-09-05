@@ -25,7 +25,6 @@ class Solution:
         n = len(data)
         amount_of_zeros = right - left - sum(data[left:right])
         res = amount_of_zeros
-        print(res)
         left+=1
         right
         for i in data[1:(n - right)+1]:
