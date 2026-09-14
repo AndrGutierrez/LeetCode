@@ -4,6 +4,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
 | [2519-count-the-number-of-k-big-indices](https://github.com/AndrGutierrez/LeetCode/tree/master/2519-count-the-number-of-k-big-indices) |
 ## Binary Search
 |  |
@@ -29,4 +30,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2519-count-the-number-of-k-big-indices](https://github.com/AndrGutierrez/LeetCode/tree/master/2519-count-the-number-of-k-big-indices) |
+## Two Pointers
+|  |
+| ------- |
+| [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
+## Greedy
+|  |
+| ------- |
+| [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
 <!---LeetCode Topics End-->
