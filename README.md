@@ -33,9 +33,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Two Pointers
 |  |
 | ------- |
+| [2330-valid-palindrome-iv](https://github.com/AndrGutierrez/LeetCode/tree/master/2330-valid-palindrome-iv) |
 | [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
 ## Greedy
 |  |
 | ------- |
 | [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
+## String
+|  |
+| ------- |
+| [2330-valid-palindrome-iv](https://github.com/AndrGutierrez/LeetCode/tree/master/2330-valid-palindrome-iv) |
 <!---LeetCode Topics End-->
