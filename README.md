@@ -4,6 +4,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [2323-find-minimum-time-to-finish-all-jobs-ii](https://github.com/AndrGutierrez/LeetCode/tree/master/2323-find-minimum-time-to-finish-all-jobs-ii) |
 | [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
 | [2519-count-the-number-of-k-big-indices](https://github.com/AndrGutierrez/LeetCode/tree/master/2519-count-the-number-of-k-big-indices) |
 ## Binary Search
@@ -38,9 +39,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Greedy
 |  |
 | ------- |
+| [2323-find-minimum-time-to-finish-all-jobs-ii](https://github.com/AndrGutierrez/LeetCode/tree/master/2323-find-minimum-time-to-finish-all-jobs-ii) |
 | [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
 ## String
 |  |
 | ------- |
 | [2330-valid-palindrome-iv](https://github.com/AndrGutierrez/LeetCode/tree/master/2330-valid-palindrome-iv) |
+## Sorting
+|  |
+| ------- |
+| [2323-find-minimum-time-to-finish-all-jobs-ii](https://github.com/AndrGutierrez/LeetCode/tree/master/2323-find-minimum-time-to-finish-all-jobs-ii) |
 <!---LeetCode Topics End-->
