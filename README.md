@@ -4,6 +4,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [1431-kids-with-the-greatest-number-of-candies](https://github.com/AndrGutierrez/LeetCode/tree/master/1431-kids-with-the-greatest-number-of-candies) |
 | [2323-find-minimum-time-to-finish-all-jobs-ii](https://github.com/AndrGutierrez/LeetCode/tree/master/2323-find-minimum-time-to-finish-all-jobs-ii) |
 | [2422-merge-operations-to-turn-array-into-a-palindrome](https://github.com/AndrGutierrez/LeetCode/tree/master/2422-merge-operations-to-turn-array-into-a-palindrome) |
 | [2519-count-the-number-of-k-big-indices](https://github.com/AndrGutierrez/LeetCode/tree/master/2519-count-the-number-of-k-big-indices) |
